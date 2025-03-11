@@ -1,0 +1,326 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.5s ease;
+}
+
+/* Header */
+header {
+    background-color: #af704c;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInDown 1.5s ease forwards;
+}
+
+.logo {
+    margin-left: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #df1d1d;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Animasi fadeIn untuk elemen yang muncul */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi fadeInDown untuk header */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('foto muka.jpeg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 2.5s ease forwards;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 2.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2.5s ease forwards;
+    animation-delay: 1s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+ 
+/* Animasi fadeInUp untuk konten hero */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 1.5s;
+}
+
+.about h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    animation: fadeInUp 1.5s ease-in forwards;   
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Menyusun gambar dan teks secara vertikal */
+    align-items: center;    /* Menjadikan elemen-elemen di tengah */
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in forwards;
+    animation-delay: 2s;
+}
+
+.about-content img {
+    border-radius: 50%;  /* Membuat gambar berbentuk lingkaran */
+    width: 200px;        /* Ukuran gambar profil */
+    height: 200px;
+    object-fit: cover;   /* Memastikan gambar pas di lingkaran */
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.about-content img:hover {
+    transform: scale(1.1); /* Memperbesar sedikit saat di-hover */
+}
+
+.about-content p {
+    max-width: 600px;   /* Batasan lebar paragraf agar tidak terlalu panjang */
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 3s;
+}
+
+
+
+/* Skills Section */
+.skills {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 2.5s;
+}
+
+.skills h2 {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 2.8s;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 3s;
+}
+
+.skill {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px); /* Gerakkan sedikit ke atas saat di-hover */
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 3.5s;
+}
+
+.contact h2 {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 3.8s;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 4s;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.5);
+}
+
+.contact button {
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    animation-delay: 4.2s;
+}
+
+.contact button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 4.5s;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+/* dark modw */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode .btn {
+    background-color: #444;
+}
+
